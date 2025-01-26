@@ -5,11 +5,9 @@ import java.util.*;
 
 class RideRepositoryTest {
     private RideRepository repository;
-
-    // Initialize RideRepository before each test
     @BeforeEach
     void setUp() {
-        repository = new RideRepository(); // This loads static data
+        repository = new RideRepository(); 
     }
 
     @Test
