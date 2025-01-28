@@ -11,8 +11,7 @@ class InvoiceGenerator {
             "Normal", 5.0, "Premium", 20.0
     );
     public double calculateFare(Ride ride) {
-        double fare = ride.distance * COST_PER_KM.get(ride.rideType) +
-                ride.time * COST_PER_MIN.get(ride.rideType);
+        double fare = (ride.distance * COST_PER_KM.get(ride.rideType)) +(ride.time * COST_PER_MIN.get(ride.rideType));
         return Math.max(fare, MIN_FARE.get(ride.rideType));
     }
     public Map<String, Object> generateInvoice(List<Ride> rides) {
