@@ -8,17 +8,17 @@ public class Main {
 
         while (true) {
             Set<String> users = repository.getAllUsers();
-            System.out.println("\nAvailable Users:");
+            System.out.println("\n Available Users:");
             for (String userId : users) {
                 System.out.println("- " + userId);
             }
             System.out.println("- Exit (type 'exit')");
 
-            System.out.print("\nEnter User ID to generate invoice (or type 'exit' to quit): ");
+            System.out.print("\n Enter User ID to generate invoice (or type 'exit' to quit): ");
             String selectedUser = scanner.nextLine().trim();
 
             if (selectedUser.equalsIgnoreCase("exit")) {
-                System.out.println("Exiting...");
+                System.out.println("Exiting");
                 break;
             }
 
@@ -27,7 +27,7 @@ public class Main {
             } else {
                 List<Ride> rides = repository.getRides(selectedUser);
                 Map<String, Object> invoice = generator.generateInvoice(rides);
-                System.out.println("\nInvoice for user: " + selectedUser);
+                System.out.println("\n Invoice for user: " + selectedUser);
                 System.out.println(invoice);
             }
         }
